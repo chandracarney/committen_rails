@@ -1,0 +1,6 @@
+language:
+  - ruby
+before_script:
+  - psql -c 'create database hot_streak_client_test;' -U postgres
+rvm:
+  - "2.2.0"
