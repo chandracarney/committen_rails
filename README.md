@@ -1,4 +1,4 @@
-# Hot Streak
+# Committen Rails
 [![Build Status](https://travis-ci.org/trayo/committen_rails.svg?branch=master)](https://travis-ci.org/trayo/committen_rails)
 [![Code Climate](https://codeclimate.com/github/trayo/committen_rails/badges/gpa.svg)](https://codeclimate.com/github/trayo/committen_rails)
 
