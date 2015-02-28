@@ -1,6 +1,5 @@
 FactoryGirl.define do
-
-   factory :user do
+  factory :user do
     name "Jim Jones"
     uid "1234567890"
     provider "github"
@@ -25,5 +24,4 @@ FactoryGirl.define do
     date Date.yesterday
     url "https://github.com/trayo/committen_ember/pull/21"
   end
-
 end
