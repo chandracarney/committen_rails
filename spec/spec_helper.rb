@@ -1,6 +1,10 @@
 require "codeclimate-test-reporter"
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+end
+
 require "factory_girl_rails"
-# CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -21,7 +25,7 @@ RSpec.configure do |config|
     config.default_formatter = 'doc'
   end
 
-  config.profile_examples = 10
+  # config.profile_examples = 10
   config.order = :random
   Kernel.srand config.seed
 end
