@@ -1,7 +1,10 @@
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+require 'factory_girl_rails'
+# CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
