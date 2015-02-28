@@ -1,5 +1,5 @@
 require "codeclimate-test-reporter"
-require 'factory_girl_rails'
+require "factory_girl_rails"
 # CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
