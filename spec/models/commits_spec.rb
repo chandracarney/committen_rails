@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Commit, type: :model do
   describe "commit attributes" do
@@ -22,8 +22,5 @@ RSpec.describe Commit, type: :model do
       commit = build(:commit)
       expect(commit).to respond_to(:user)
     end
-
   end
-
-
 end

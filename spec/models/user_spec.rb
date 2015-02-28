@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe User, type: :model do
   describe "user attributes" do
@@ -35,8 +35,5 @@ RSpec.describe User, type: :model do
       user = build(:user)
       expect(user).to respond_to(:goals)
     end
-
   end
-
-
 end
