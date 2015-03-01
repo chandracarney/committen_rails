@@ -25,6 +25,11 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  ActiveRecord::Base.logger.level = Logger::INFO
+  ActionController::Base.logger.level = Logger::ERROR
+  Rails.logger.level = Logger::ERROR
+  CodeClimate::TestReporter.start
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
