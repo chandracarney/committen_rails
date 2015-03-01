@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'skylight'
 gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
+gem 'omniauth'
+gem "omniauth-github"
 
 group :development, :test do
   gem 'better_errors'
