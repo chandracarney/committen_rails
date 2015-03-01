@@ -32,12 +32,12 @@ RSpec.configure do |config|
 end
 
 OmniAuth.config.test_mode = true
-omniauth_hash = { 'provider' => 'github',
-                  'uid' => '12345',
-                  'info' => {
-                      'name' => 'jimmy',
-                      'email' => 'jimmy@example.com',
-                      'image' => 'https://avatars2.githubusercontent.com/u/6923345?v=3&s=460'
+omniauth_hash = { "provider" => "github",
+                  "uid" => "12345",
+                  "info" => {
+                    "name" => "jimmy",
+                    "email" => "jimmy@example.com",
+                    "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
                   }
                 }
 

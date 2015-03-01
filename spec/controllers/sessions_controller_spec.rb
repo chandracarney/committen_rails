@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe SessionsController, type: :controller do
   before do
@@ -7,9 +7,9 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "create method" do
     it "creates a user" do
-      expect {
+      expect do
         post(:create, provider: :github)
-      }.to change{ User.count }.by(1)
+      end.to change{ User.count }.by(1)
     end
 
     it "creates a session" do
