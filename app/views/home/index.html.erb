@@ -1,1 +1,9 @@
-<h1>HOT STREAK</h1>
+<h1>COMMITTEN</h1>
+
+<h2> Log in page</h2>
+<% if current_user %>
+  <p>Welcome <%= current_user.name %></p>
+  <%= link_to "Sign out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Github", auth_github_path %>
+<% end %>
