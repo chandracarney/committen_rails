@@ -1,3 +1,5 @@
 ---
 # The authentication token for the application.
 authentication: 1PWsgKMjWAt4RbmPlfqqMSurfk6o9yTPBTzFZuTnuEE
+
+alert_log_file: "tmp/garbage"
