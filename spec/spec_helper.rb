@@ -1,7 +1,7 @@
 require "codeclimate-test-reporter"
-require 'simplecov'
+require "simplecov"
 SimpleCov.start do
-  add_filter '/spec/'
+  add_filter "/spec/"
 end
 
 require "factory_girl_rails"
@@ -22,7 +22,7 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
 
   if config.files_to_run.one?
-    config.default_formatter = 'doc'
+    config.default_formatter = "doc"
   end
 
   # config.profile_examples = 10
