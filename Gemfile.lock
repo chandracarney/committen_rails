@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 77fb050d24420cc77734973e7f57f1980aca6963
+  specs:
+    active_model_serializers (0.10.0.pre)
+      activemodel (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -233,6 +240,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   better_errors
   capybara
   codeclimate-test-reporter
