@@ -1,6 +1,7 @@
 # Committen Rails
 [![Circle CI](https://circleci.com/gh/trayo/committen_rails.svg?style=svg)](https://circleci.com/gh/trayo/committen_rails)
 [![Code Climate](https://codeclimate.com/github/trayo/committen_rails/badges/gpa.svg)](https://codeclimate.com/github/trayo/committen_rails)
+[![Test Coverage](https://codeclimate.com/github/trayo/committen_rails/badges/coverage.svg)](https://codeclimate.com/github/trayo/committen_rails)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
