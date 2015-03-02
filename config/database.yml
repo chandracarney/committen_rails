@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: hot_streak_client_development
+  database: committen_rails_development
 
 test:
   <<: *default
-  database: hot_streak_client_test
+  database: committen_rails_test
 
 production:
   <<: *default
-  database: hot_streak_client_production
+  database: committen_rails_production

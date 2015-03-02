@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :goals
   has_many :commits
-  validates :name, :uid, :provider, presence: true
+  validates :name, :uid, :provider,
+            :thumbnail_url, presence: true
 
   def self.create_with_github(auth)
     create! do |user|
