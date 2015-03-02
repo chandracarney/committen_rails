@@ -3,17 +3,7 @@ require "rails_helper"
 RSpec.describe SessionsController, type: :controller do
   before do
     OmniAuth.config.test_mode = true
-    omniauth_hash = { "provider" => "github",
-                      "uid" => "12345",
-                      "info" => {
-                        "name" => "jimmy",
-                        "email" => "jimmy@example.com",
-                        "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
-                      }
-                    }
-
-    OmniAuth.config.add_mock(:github, omniauth_hash)
-
+    OmniAuth.config.add_mock(:github, omni_auth)
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
   end
 
@@ -23,10 +13,10 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     it "creates a session" do
-      session[:user_id] = nil
+      session["user_id"] = nil
       post(:create, provider: :github)
 
-      expect(session[:user_id]).not_to be_nil
+      expect(session["user_id"]).not_to be_nil
     end
   end
 
@@ -35,7 +25,18 @@ RSpec.describe SessionsController, type: :controller do
       post(:create, provider: :github)
       delete(:destroy)
 
-      expect(session[:user_id]).to be_nil
+      expect(session["user_id"]).to be_nil
     end
+  end
+
+  def omni_auth
+    { "provider" => "github",
+      "uid" => "12345",
+      "info" => {
+        "name" => "jimmy",
+        "email" => "jimmy@example.com",
+        "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
+      }
+    }
   end
 end

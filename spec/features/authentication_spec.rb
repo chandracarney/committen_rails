@@ -1,6 +1,11 @@
 require "rails_helper"
 
 RSpec.describe "Authentication flow", type: :feature do
+  before do
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.add_mock(:github, omni_auth)
+  end
+
   it "can authenticate with github" do
     visit root_path
     click_link "Sign in with Github"
@@ -16,5 +21,16 @@ RSpec.describe "Authentication flow", type: :feature do
     click_link "Sign out"
 
     expect(page).to have_text("Sign in with Github")
+  end
+
+  def omni_auth
+    { "provider" => "github",
+      "uid" => "12345",
+      "info" => {
+        "name" => "jimmy",
+        "email" => "jimmy@example.com",
+        "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
+      }
+    }
   end
 end
