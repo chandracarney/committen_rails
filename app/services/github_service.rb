@@ -6,6 +6,6 @@ class GithubService
   end
 
   def fetch_events(user)
-    JSON.parse(connection.get("#{user.name}").body)
+    JSON.parse(connection.get("#{user.nickname}/events?per_page=300").body)
   end
 end
