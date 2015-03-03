@@ -18,7 +18,7 @@ class Commit < ActiveRecord::Base
   end
 
   def self.select_new_commits(responses)
-    old_shas = all.map(&:sha)
+    old_shas = all.pluck(:sha)
     responses.reject { |response| old_shas.include?(response["sha"]) }
   end
 end

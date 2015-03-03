@@ -17,7 +17,7 @@ class GithubService
 
   def parse_commits(response)
     events = JSON.parse(response.body)
-    pushes = events.select.select { |event| event["type"] == "PushEvent" }
+    pushes = events.select { |event| event["type"] == "PushEvent" }
     pushes.map do |push|
       commits = Hash.new
       commits["date"] = push["created_at"]
