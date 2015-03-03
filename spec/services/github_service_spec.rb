@@ -13,11 +13,23 @@ RSpec.describe "Github Service flow" do
       user = build(:user)
       user.nickname = "skuhlmann"
       service = GithubService.new
-      response = service.fetch_events(user)
+      response = service.get_events(user)
+      events = JSON.parse(response.body)
 
-      expect(response.length).to eq(100)
-      expect(response.length).to eq(100)
-      expect(response.first["actor"]["login"]).to eq("skuhlmann")
+      expect(events.length).to eq(100)
+      expect(events.first["actor"]["login"]).to eq("skuhlmann")
+    end
+  end
+
+  it "parses the commits from the event stream" do
+    VCR.use_cassette("event_fetch") do
+      user = build(:user)
+      user.nickname = "skuhlmann"
+      service = GithubService.new
+      response = service.get_commits(user)
+
+      expect(response.length).to eq(23)
+      expect(response.any? { |commit| commit["type"] == "PushEvent" }).to eq(true)
     end
   end
 end
