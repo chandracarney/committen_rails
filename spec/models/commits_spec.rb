@@ -53,11 +53,9 @@ RSpec.describe Commit, type: :model do
     end
 
     it "will not try to create a duplicate commit" do
-      commit = create(:commit)
+      create(:commit)
       new_batch = [{ "sha" => "12345678" }, { "sha" => "9876" }]
-
       new_shas = Commit.select_new_commits(new_batch)
-
 
       expect(new_shas.count).to eq(1)
       expect(new_shas.first["sha"]).to eq("9876")
