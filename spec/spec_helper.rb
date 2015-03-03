@@ -6,7 +6,7 @@ end
 
 require "factory_girl_rails"
 require "omniauth"
-require 'vcr'
+require "vcr"
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -31,12 +31,12 @@ RSpec.configure do |config|
   config.order = :random
   Kernel.srand config.seed
 
-  VCR.configure do |config|
-    config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-    config.hook_into :webmock
-    config.default_cassette_options = {
-        match_requests_on: [:uri, :body, :method]
+  VCR.configure do |configuration|
+    configuration.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+    configuration.hook_into :webmock
+    configuration.default_cassette_options = {
+      match_requests_on: [:uri, :body, :method]
     }
-    config.ignore_hosts 'codeclimate.com'
+    configuration.ignore_hosts "codeclimate.com"
   end
 end

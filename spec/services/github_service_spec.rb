@@ -3,8 +3,9 @@ require "rails_helper"
 RSpec.describe "Github Service flow" do
   it "creates a connection with faraday" do
     service = GithubService.new
+    result = service.connection.url_prefix.to_s
 
-    expect(service.connection.url_prefix.to_s).to eq("https://api.github.com/users/")
+    expect(result).to eq("https://api.github.com/users/")
   end
 
   it "fetches the user's event stream" do
@@ -32,4 +33,3 @@ RSpec.describe "Github Service flow" do
     end
   end
 end
-
