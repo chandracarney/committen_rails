@@ -28,6 +28,7 @@ RSpec.describe "Authentication flow", type: :feature do
       "uid" => "12345",
       "info" => {
         "name" => "jimmy",
+        "knickname" => "jjones",
         "email" => "jimmy@example.com",
         "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
       }

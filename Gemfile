@@ -17,6 +17,7 @@ gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
 gem 'omniauth'
 gem "omniauth-github"
+gem "faraday"
 
 group :development, :test do
   gem 'better_errors'

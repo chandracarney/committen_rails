@@ -247,6 +247,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   dotenv-rails
   factory_girl_rails
+  faraday
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails

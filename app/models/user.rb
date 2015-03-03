@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :goals
   has_many :commits
-  validates :name, :uid, :provider,
+  validates :name, :uid, :provider, :knickname,
             :thumbnail_url, presence: true
 
   def self.create_with_github(auth)
@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
+      user.knickname = auth["info"]["knickname"]
       user.thumbnail_url = auth["info"]["image"]
       user.email = auth["info"]["email"]
     end

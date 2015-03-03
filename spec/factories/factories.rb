@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :user do
     name "Jim Jones"
+    knickname "jjones"
     uid "1234567890"
     provider "github"
     twitter "@jimjones"

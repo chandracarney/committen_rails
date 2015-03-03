@@ -26,6 +26,15 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
+    it "must have a knickname" do
+      user = build(:user)
+      expect(user).to be_valid
+
+      user.knickname = nil
+      expect(user).to_not be_valid
+    end
+
+
     it "has many commits" do
       user = build(:user)
       expect(user).to respond_to(:commits)
