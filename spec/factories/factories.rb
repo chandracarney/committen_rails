@@ -1,12 +1,12 @@
 FactoryGirl.define do
   factory :user do
     name "Jim Jones"
-    knickname "jjones"
     uid "1234567890"
     provider "github"
     twitter "@jimjones"
     email "jimjones@example.com"
     thumbnail_url "https://www.google.com/images/srpr/logo11w.png"
+    nickname "jjones"
   end
 
   factory :goal do

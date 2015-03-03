@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150303164707) do
     t.string   "thumbnail_url", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "knickname"
+    t.string   "nickname",      null: false
   end
 
 end
