@@ -33,5 +33,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem "vcr"
+  gem "webmock"
 end
 
