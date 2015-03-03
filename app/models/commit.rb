@@ -5,7 +5,7 @@ class Commit < ActiveRecord::Base
 
   def self.create_with_github(user)
     service = GithubService.new
-    responses = service.get_commits(user)
+    responses = select_new_commits(service.get_commits(user))
     responses.each do |response|
       create! do |commit|
         commit.user = user
@@ -15,5 +15,12 @@ class Commit < ActiveRecord::Base
         commit.sha = response["sha"]
       end
     end
+  end
+
+  private
+
+  def self.select_new_commits(responses)
+    old_shas = self.all.map { |commit| commit.sha }
+    responses.reject { |response| old_shas.include?(response["sha"]) }
   end
 end

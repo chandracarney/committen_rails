@@ -10,8 +10,7 @@ RSpec.describe "Github Service flow" do
 
   it "fetches the user's event stream" do
     VCR.use_cassette("event_fetch") do
-      user = build(:user)
-      user.nickname = "skuhlmann"
+      user = build(:user, nickname: "skuhlmann")
       service = GithubService.new
       response = service.get_events(user)
       events = JSON.parse(response.body)
@@ -23,7 +22,7 @@ RSpec.describe "Github Service flow" do
 
   it "parses the commits from the event stream" do
     VCR.use_cassette("event_fetch") do
-      user = build(:user)
+      user = build(:user, nickname: "skuhlmann")
       user.nickname = "skuhlmann"
       service = GithubService.new
       response = service.get_commits(user)

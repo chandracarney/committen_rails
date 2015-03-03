@@ -27,14 +27,8 @@ RSpec.describe Commit, type: :model do
     end
 
     it "cannot have a duplicate sha" do
-      commit = build(:commit)
-      another_commit = Commit.create(user_id: 1,
-                                     date: Date.new,
-                                     url: "goole.com",
-                                     sha: "456"
-                                    )
-      commit.save!
-      another_commit.save!
+      commit = create(:commit)
+      another_commit = create(:commit, sha: "abc")
       another_commit.sha = commit.sha
 
       expect(another_commit).to_not be_valid
@@ -49,14 +43,24 @@ RSpec.describe Commit, type: :model do
   describe "creation with github" do
     it "can create instance with the github service" do
       VCR.use_cassette("commit_creation") do
-        user = build(:user)
-        user.nickname = "skuhlmann"
+        user = build(:user, nickname: "skuhlmann")
         Commit.create_with_github(user)
         commits = user.commits
 
         expect(commits.count).to eq(23)
         expect(commits.first.message).to include("Adds email into the")
       end
+    end
+
+    it "will not try to create a duplicate commit" do
+      commit = create(:commit)
+      new_batch = [{ "sha" => "12345678" }, { "sha" => "9876" }]
+
+      new_shas = Commit.select_new_commits(new_batch)
+
+
+      expect(new_shas.count).to eq(1)
+      expect(new_shas.first["sha"]).to eq("9876")
     end
   end
 end
