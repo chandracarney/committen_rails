@@ -4,6 +4,12 @@ RSpec.describe "Authentication flow", type: :feature do
   before do
     OmniAuth.config.test_mode = true
     OmniAuth.config.add_mock(:github, omni_auth)
+    VCR.turn_off!
+    WebMock.allow_net_connect!
+  end
+
+  after do
+    VCR.turn_on!
   end
 
   it "can authenticate with github" do
@@ -28,7 +34,7 @@ RSpec.describe "Authentication flow", type: :feature do
       "uid" => "12345",
       "info" => {
         "name" => "jimmy",
-        "nickname" => "jjones",
+        "nickname" => "skuhlmann",
         "email" => "jimmy@example.com",
         "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
       }

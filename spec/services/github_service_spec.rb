@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "Github Service flow" do
-
   it "creates a connection with faraday" do
     service = GithubService.new
 
@@ -29,7 +28,7 @@ RSpec.describe "Github Service flow" do
       response = service.get_commits(user)
 
       expect(response.length).to eq(23)
-      expect(response.any? { |commit| commit["type"] == "PushEvent" }).to eq(true)
+      expect(response.first["user"]).to eq("Sam Kuhlmann")
     end
   end
 end

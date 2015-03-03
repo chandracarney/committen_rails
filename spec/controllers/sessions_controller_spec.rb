@@ -5,6 +5,12 @@ RSpec.describe SessionsController, type: :controller do
     OmniAuth.config.test_mode = true
     OmniAuth.config.add_mock(:github, omni_auth)
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
+    VCR.turn_off!
+    WebMock.allow_net_connect!
+  end
+
+  after do
+    VCR.turn_on!
   end
 
   describe "create method" do
@@ -34,7 +40,7 @@ RSpec.describe SessionsController, type: :controller do
       "uid" => "12345",
       "info" => {
         "name" => "jimmy",
-        "nickname" => "jjones",
+        "nickname" => "skuhlmann",
         "email" => "jimmy@example.com",
         "image" => "https://avatars2.githubusercontent.com/u/6923345?v=3&s=460"
       }

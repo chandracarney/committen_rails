@@ -24,5 +24,6 @@ FactoryGirl.define do
     message "Adds tests"
     date Date.yesterday
     url "https://github.com/trayo/committen_ember/pull/21"
+    sha "12345678"
   end
 end

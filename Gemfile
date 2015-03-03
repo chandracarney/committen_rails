@@ -34,6 +34,5 @@ group :development, :test do
   gem 'spring'
   gem 'web-console', '~> 2.0'
   gem "vcr"
-  gem "webmock"
+  gem "webmock", require: false, group: :development
 end
-

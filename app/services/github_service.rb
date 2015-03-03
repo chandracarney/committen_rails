@@ -6,7 +6,7 @@ class GithubService
   end
 
   def get_commits(user)
-    parse_commits(get_events(user))
+    parse_commits(get_events(user), user)
   end
 
   def get_events(user)
@@ -15,7 +15,19 @@ class GithubService
 
   private
 
-  def parse_commits(events)
-    JSON.parse(events.body).select { |event| event["type"] == "PushEvent" }
+  def parse_commits(response, user)
+    events = JSON.parse(response.body)
+    pushes = events.select.select { |event| event["type"] == "PushEvent" }
+    pushes.map do |push|
+      commits = Hash.new
+      commits["date"] = push["created_at"]
+      push["payload"]["commits"].each do |node|
+        commits["user"] = node["author"]["name"]
+        commits["message"] = node["message"]
+        commits["url"] = node["url"]
+        commits["sha"] = node["sha"]
+      end
+      commits
+    end
   end
 end
