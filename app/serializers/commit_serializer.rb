@@ -1,5 +1,6 @@
 class CommitSerializer < ActiveModel::Serializer
-  attributes :date,
+  attributes :message,
+             :date,
              :url,
              :sha
 end

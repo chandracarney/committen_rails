@@ -4,5 +4,6 @@ class UserSerializer < ActiveModel::Serializer
              :uid,
              :email,
              :twitter,
-             :thumbnail_url
+             :thumbnail_url,
+             :nickname
 end
