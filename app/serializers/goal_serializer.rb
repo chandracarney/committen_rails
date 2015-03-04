@@ -1,3 +1,6 @@
 class GoalSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :title,
+             :description,
+             :start_date,
+             :end_date
 end
