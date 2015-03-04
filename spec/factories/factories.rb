@@ -6,6 +6,7 @@ FactoryGirl.define do
     twitter "@jimjones"
     email "jimjones@example.com"
     thumbnail_url "https://www.google.com/images/srpr/logo11w.png"
+    nickname "jjones"
   end
 
   factory :goal do
@@ -23,5 +24,6 @@ FactoryGirl.define do
     message "Adds tests"
     date Date.yesterday
     url "https://github.com/trayo/committen_ember/pull/21"
+    sha "12345678"
   end
 end
