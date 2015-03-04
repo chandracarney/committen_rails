@@ -20,7 +20,6 @@ gem "omniauth-github"
 gem "faraday"
 
 group :development, :test do
-  gem 'better_errors'
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
   gem 'factory_girl_rails'

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  resources :users, only: [:index]
+  namespace :api do
+    resources :users
+    resources :goals
+    resources :commits
+  end
 
   get "auth/github"
   get "auth/:provider/callback" => "sessions#create"
