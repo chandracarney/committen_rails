@@ -13,7 +13,7 @@ FactoryGirl.define do
     user
     title "Become a super programmer"
     description "lorem programming ipsum"
-    start_date Date.current
+    start_date Date.yesterday
     end_date Date.current.advance(days: 4)
     daily_quantity 6
     completed false
