@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe "Life coach alerts", type: :feature do
   it "can find the streaks in danger of getting broken" do
     user = create(:user)
-    goal = create(:goal, user_id: user.id)
-    commit = create(:commit, user_id: user.id)
+    create(:goal, user_id: user.id)
+    create(:commit, user_id: user.id)
 
     results = LifeCoach.find_streak_warnings
 
@@ -13,8 +13,8 @@ RSpec.describe "Life coach alerts", type: :feature do
 
   it "again with a ton of commits" do
     user = create(:user)
-    goal = create(:goal, user_id: user.id)
-    commit = create(:commit, user_id: user.id)
+    create(:goal, user_id: user.id)
+    create(:commit, user_id: user.id)
     create(:commit, user_id: user.id, date: Date.today, sha: "345")
     create(:commit, user_id: user.id, date: Date.today, sha: "456")
     create(:commit, user_id: user.id, date: Date.yesterday, sha: "777")
