@@ -3,7 +3,8 @@
 [![Code Climate](https://codeclimate.com/github/trayo/committen_rails/badges/gpa.svg)](https://codeclimate.com/github/trayo/committen_rails)
 [![Test Coverage](https://codeclimate.com/github/trayo/committen_rails/badges/coverage.svg)](https://codeclimate.com/github/trayo/committen_rails)
 
-This repository is the host of the server side, Rails app that works in conjuction with the ember side Committen app. This app serves as an API endpoint that Ember will fetch and store it's data.
+This repository is the host of the server side, Rails app that works in conjuction with [the ember side Committen app](https://github.com/trayo/committen_ember). 
+This app serves as an API endpoint that Ember will fetch and store it's data.
 
 ***
 ### Requirements
