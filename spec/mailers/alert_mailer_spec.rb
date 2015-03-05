@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe AlertMailer, :type => :mailer do
   it "mails a goal alert email" do
     user = create(:user)
-    goal = create(:goal)
+    goal = create(:goal, user_id: user.id)
 
     result = AlertMailer.goal_alert_email(goal, user).deliver
 
