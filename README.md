@@ -8,7 +8,6 @@ This app serves as an API endpoint that Ember will fetch and store it's data.
 
 Created by: [Chandra Carney](https://github.com/chandracarney), [Sam Kuhlmann](https://github.com/skuhlmann) and [Travis Yoder](https://github.com/trayo)
 
-***
 ## Requirements
 
 * Ruby 2.2.0
