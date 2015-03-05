@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :goals
   has_many :commits
   validates :name, :uid, :provider, :nickname,
-    :thumbnail_url, presence: true
+            :thumbnail_url, presence: true
   validates :uid, uniqueness: true
   before_create :generate_token
 
