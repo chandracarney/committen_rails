@@ -25,5 +25,4 @@ RSpec.describe "Life coach alerts", type: :feature do
     expect(commits.count).to eq(2)
     expect(results.count).to eq(1)
   end
-
 end
