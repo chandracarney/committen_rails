@@ -41,5 +41,4 @@ Created by: [Chandra Carney](https://github.com/chandracarney), [Sam Kuhlmann](h
 * Run the server in your console:  
 `$ rails server`
 
-* Navigate to localhost 3000:  
-`$ open http://localhost:3000`
+* Visit the app at [http://localhost:3000](http://localhost:3000) to see the splash page.
