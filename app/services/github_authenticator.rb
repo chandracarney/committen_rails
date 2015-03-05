@@ -17,7 +17,6 @@ class GithubAuthenticator
   end
 
   def github_client
-    binding.pry
     Octokit::Client.new(access_token: access_token)
   end
 
@@ -60,8 +59,8 @@ class GithubAuthenticator
 
   def post_data
     {
-      "client_id" => ENV["GITHUB_CLIENT_ID"],
-      "client_secret" => ENV["GITHUB_CLIENT_SECRET"],
+      "client_id" => ENV["E_GITHUB_CLIENT_ID"],
+      "client_secret" => ENV["E_GITHUB_CLIENT_SECRET"],
       "code" => @auth_code
     }
   end
