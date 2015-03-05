@@ -15,26 +15,26 @@ This repository is the host of the server side, Rails app that works in conjucti
 ***
 ### Configuration
 
-Clone the repo and bundle install:  
+* Clone the repo and bundle install:  
 `$ git clone https://github.com/trayo/committen_rails.git && cd committen_rails && bundle install`
 
-Set up the database:  
+* Set up the database:  
 `$ rake db:setup`
 
 ***
 ### Running the tests
 
-Run the tests with rspec:  
+* Run the tests with rspec:  
 `$ rspec`
 
-Run the tests with rake:  
+* Run the tests with rake:  
 `$ rake`
 
 ***
 ### Development
 
-Run the server in your console:  
+* Run the server in your console:  
 `$ rails server`
 
-Navigate to localhost 3000:  
+* Navigate to localhost 3000:  
 `$ open http://localhost:3000`
