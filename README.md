@@ -3,23 +3,38 @@
 [![Code Climate](https://codeclimate.com/github/trayo/committen_rails/badges/gpa.svg)](https://codeclimate.com/github/trayo/committen_rails)
 [![Test Coverage](https://codeclimate.com/github/trayo/committen_rails/badges/coverage.svg)](https://codeclimate.com/github/trayo/committen_rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is the host of the server side, Rails app that works in conjuction with the ember side Committen app. This app serves as an API endpoint that Ember will fetch and store it's data.
 
-Things you may want to cover:
+***
+### Requirements
 
-* Ruby version
+* Ruby 2.2.0
 
-* System dependencies
+* Rails 4.2.0
 
-* Configuration
+***
+### Configuration
 
-* Database creation
+Clone the repo and bundle install:  
+`$ git clone https://github.com/trayo/committen_rails.git && cd committen_rails && bundle install`
 
-* Database initialization
+Set up the database:  
+`$ rake db:setup`
 
-* How to run the test suite
+***
+### Running the tests
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the tests with rspec:  
+`$ rspec`
 
-* Deployment instructions
+Run the tests with rake:  
+`$ rake`
+
+***
+### Development
+
+Run the server in your console:  
+`$ rails server`
+
+Navigate to localhost 3000:  
+`$ open http://localhost:3000`
