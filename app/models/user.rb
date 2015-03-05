@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :commits
   validates :name, :uid, :provider, :nickname,
     :thumbnail_url, presence: true
+  validates :uid, uniqueness: true
   before_create :generate_token
 
   def self.create_with_github(auth)
