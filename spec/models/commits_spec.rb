@@ -26,14 +26,6 @@ RSpec.describe Commit, type: :model do
       expect(commit).to_not be_valid
     end
 
-    it "cannot have a duplicate sha" do
-      commit = create(:commit)
-      another_commit = create(:commit, sha: "abc")
-      another_commit.sha = commit.sha
-
-      expect(another_commit).to_not be_valid
-    end
-
     it "belongs to a user" do
       commit = build(:commit)
       expect(commit).to respond_to(:user)

@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'skylight'
 gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
+gem 'octokit'
 gem 'omniauth'
 gem "omniauth-github"
 gem "faraday"

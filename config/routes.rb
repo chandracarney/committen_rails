@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users
     resources :goals
     resources :commits
+    resources :sessions, only: [:create]
   end
 
   get "auth/github"
