@@ -28,8 +28,7 @@ class Api::SessionsController < ApplicationController
 
   def find_or_create_user_from_github
     github_authenticator = GithubAuthenticator.new(github_auth_code)
-    user_factory = UserFactory.new(github_authenticator)
-    user_factory.find_or_create_user
+    user_factory = UserFactory.new(github_authenticator).find_or_create_user
   end
 
   def token
