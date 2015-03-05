@@ -1,9 +1,11 @@
+seeds_logger = Logger.new(STDOUT)
+
 first_user = User.create(
   name: "jorge",
   provider: "github",
   uid: "203489",
   nickname: "dabomb",
-  email: "travis@example.com",
+  email: "jorge@example.com",
   thumbnail_url: "http://robohash.org/1"
  )
 
@@ -12,7 +14,7 @@ second_user = User.create(
   provider: "github",
   uid: "123456",
   nickname: "speedy",
-  email: "sam@example.com",
+  email: "horace@example.com",
   thumbnail_url: "http://robohash.org/2"
  )
 
@@ -21,12 +23,13 @@ third_user = User.create(
   provider: "github",
   uid: "567890",
   nickname: "javablip",
-  email: "travis@example.com",
+  email: "steve@example.com",
   thumbnail_url: "http://robohash.org/3"
  )
 
-Goal.create(
-  user_id: first_user,
+seeds_logger.info "Users created!"
+
+first_user.goals.create(
   title: "committen with mittens",
   description: "mittens does some commitin'",
   start_date: Date.current,
@@ -35,8 +38,7 @@ Goal.create(
   completed: false
  )
 
-Goal.create(
-  user_id: first_user,
+first_user.goals.create(
   title: "coding on open source",
   description: "it does the body good",
   start_date: Date.current,
@@ -45,8 +47,9 @@ Goal.create(
   completed: false
  )
 
-Goal.create(
-  user_id: second_user,
+seeds_logger.info "First user goals created!"
+
+second_user.goals.create(
   title: "gettin my commit on",
   description: "to the moon!",
   start_date: Date.current,
@@ -55,8 +58,9 @@ Goal.create(
   completed: true
  )
 
-Goal.create(
-  user_id: third_user,
+seeds_logger.info "Second user goals created!"
+
+third_user.goals.create(
   title: "wow such code",
   description: "doing some projamming",
   start_date: Date.current,
@@ -65,15 +69,16 @@ Goal.create(
   completed: false
  )
 
-Commit.create(
-  user_id: first_user,
+seeds_logger.info "Second user goals created!"
+
+first_user.commits.create(
   message: "create seeds file",
   date: Date.current.advance(days: 10),
   url: "https://github.com/trayo/committen_rails/commit/8a7761",
   sha: "8a77612b1d66ec211d63fe56c24a3afa54a27a87"
  )
 
-Commit.create(
+first_user.commits.create(
   user_id: first_user,
   message: "create seeds file",
   date: Date.current.advance(days: 10),
@@ -81,26 +86,29 @@ Commit.create(
   sha: "66fd619d53a635aa834d22ec7df243560fd4490f"
  )
 
-Commit.create(
-  user_id: second_user,
+seeds_logger.info "First user goals created!"
+
+second_user.commits.create(
   message: "create seeds file",
   date: Date.current.advance(days: 10),
   url: "https://github.com/trayo/committen_rails/commit/880705",
   sha: "88070560d6aaf66859696c54dd01310f73644c66"
  )
 
-Commit.create(
-  user_id: third_user,
+seeds_logger.info "Second user goals created!"
+
+third_user.commits.create(
   message: "create seeds file",
   date: Date.current.advance(days: 10),
   url: "https://github.com/trayo/committen_rails/commit/4b14fe",
   sha: "4b14fe7493932c29c0d1b85a3ba120bd22079c3e"
  )
 
-Commit.create(
-  user_id: third_user,
+third_user.commits.create(
   message: "create seeds file",
   date: Date.current.advance(days: 10),
   url: "https://github.com/trayo/committen_rails/commit/59968d",
   sha: "59968d1e2579d15da9a8a803c5c586a72b45b5ce"
  )
+
+seeds_logger.info "Third user goals created!"

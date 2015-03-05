@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 gem 'rails', '4.2.0'
 
-gem "active_model_serializers", github: "rails-api/active_model_serializers"
+gem 'active_model_serializers', '~> 0.8'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'dotenv-rails'
 gem 'foundation-rails'
