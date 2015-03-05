@@ -9,23 +9,27 @@ This app serves as an API endpoint that Ember will fetch and store it's data.
 Created by: [Chandra Carney](https://github.com/chandracarney), [Sam Kuhlmann](https://github.com/skuhlmann) and [Travis Yoder](https://github.com/trayo)
 
 ***
-### Requirements
+## Requirements
 
 * Ruby 2.2.0
 
 * Rails 4.2.0
 
-***
-### Configuration
+## Installation
 
-* Clone the repo and bundle install:  
-`$ git clone https://github.com/trayo/committen_rails.git && cd committen_rails && bundle install`
+* Clone the repo:  
+`$ git clone https://github.com/trayo/committen_rails.git`
+
+* Change into the new directory:  
+`$ cd committen_rails`
+
+* Bundle install:  
+`$ bundle install`
 
 * Set up the database:  
 `$ rake db:setup`
 
-***
-### Running the tests
+## Running the tests
 
 * Run the tests with rspec:  
 `$ rspec`
@@ -33,8 +37,7 @@ Created by: [Chandra Carney](https://github.com/chandracarney), [Sam Kuhlmann](h
 * Run the tests with rake:  
 `$ rake`
 
-***
-### Development
+## Development
 
 * Run the server in your console:  
 `$ rails server`
