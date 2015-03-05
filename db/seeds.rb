@@ -1,3 +1,5 @@
+seeds_logger = Logger.new(STDOUT)
+
 first_user = User.create(
   name: "jorge",
   provider: "github",
@@ -25,7 +27,7 @@ third_user = User.create(
   thumbnail_url: "http://robohash.org/3"
  )
 
-puts "Users created!"
+seeds_logger.info "Users created!"
 
 first_user.goals.create(
   title: "committen with mittens",
@@ -45,7 +47,7 @@ first_user.goals.create(
   completed: false
  )
 
-puts "First user goals created!"
+seeds_logger.info "First user goals created!"
 
 second_user.goals.create(
   title: "gettin my commit on",
@@ -56,7 +58,7 @@ second_user.goals.create(
   completed: true
  )
 
-puts "Second user goals created!"
+seeds_logger.info "Second user goals created!"
 
 third_user.goals.create(
   title: "wow such code",
@@ -67,7 +69,7 @@ third_user.goals.create(
   completed: false
  )
 
-puts "Second user goals created!"
+seeds_logger.info "Second user goals created!"
 
 first_user.commits.create(
   message: "create seeds file",
@@ -84,7 +86,7 @@ first_user.commits.create(
   sha: "66fd619d53a635aa834d22ec7df243560fd4490f"
  )
 
-puts "First user goals created!"
+seeds_logger.info "First user goals created!"
 
 second_user.commits.create(
   message: "create seeds file",
@@ -93,7 +95,7 @@ second_user.commits.create(
   sha: "88070560d6aaf66859696c54dd01310f73644c66"
  )
 
-puts "Second user goals created!"
+seeds_logger.info "Second user goals created!"
 
 third_user.commits.create(
   message: "create seeds file",
@@ -109,4 +111,4 @@ third_user.commits.create(
   sha: "59968d1e2579d15da9a8a803c5c586a72b45b5ce"
  )
 
-puts "Third user goals created!"
+seeds_logger.info "Third user goals created!"
