@@ -3,6 +3,10 @@ class Commit < ActiveRecord::Base
   validates :date, :url, :sha, presence: true
   validates :sha, uniqueness: true
 
+  def self.made_today
+    where("date >= ?", Time.zone.now.beginning_of_day)
+  end
+
   def self.create_with_github(user)
     service = GithubService.new
     responses = select_new_commits(service.get_commits(user))
