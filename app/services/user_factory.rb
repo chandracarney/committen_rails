@@ -4,8 +4,7 @@ class UserFactory
   end
 
   def find_or_create_user
-    # User.create_with_github_ember(authenticator.auth)
-    User.find_or_create_by(name: authenticator.name)
+    User.create_with_github_ember(authenticator.auth)
   end
 
   private

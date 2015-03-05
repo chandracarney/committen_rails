@@ -8,8 +8,8 @@ class GithubAuthenticator
     @auth_code = auth_code
   end
 
-  def name
-    github_user[:login]
+  def auth
+    github_user
   end
 
   def github_user

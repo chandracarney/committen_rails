@@ -17,14 +17,13 @@ class User < ActiveRecord::Base
   end
 
   def self.create_with_github_ember(auth)
-    binding.pry
     create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
-      user.nickname = auth["info"]["nickname"]
-      user.thumbnail_url = auth["info"]["image"]
-      user.email = auth["info"]["email"]
+      user.provider = "github"
+      user.uid = auth[:id]
+      user.name = auth[:name]
+      user.nickname = auth[:login]
+      user.thumbnail_url = auth[:avatar_url]
+      user.email = auth[:email]
     end
   end
 
