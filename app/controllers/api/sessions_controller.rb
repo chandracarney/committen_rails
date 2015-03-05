@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
 
   def create
     if user
-      render json: user, status: :created
+      render json: user.as_json(only: [:token, :email, :name, :nickname, :provider, :thumbnail_url, :twitter, :uid]), status: :created
     else
       render nothing: true, status: :bad_request
     end
