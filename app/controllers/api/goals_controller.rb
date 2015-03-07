@@ -1,5 +1,5 @@
 class Api::GoalsController < ApplicationController
-  skip_before_filter  :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
 
   def index
     render json: Goal.all
@@ -20,6 +20,8 @@ class Api::GoalsController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit(:user_id, :title, :description, :start_date, :end_date, :daily_quantity, :completed)
+    params.require(:goal).permit(:user_id, :title, :description,
+                                 :start_date, :end_date,
+                                 :daily_quantity, :completed)
   end
 end
