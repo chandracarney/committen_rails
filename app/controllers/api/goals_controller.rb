@@ -1,4 +1,6 @@
 class Api::GoalsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
+
   def index
     render json: Goal.all
   end
@@ -8,11 +10,11 @@ class Api::GoalsController < ApplicationController
   end
 
   def create
-    render json: Goal.create(goal_params))
+    render json: Goal.create(goal_params)
   end
 
   def update
-    render json: Goal.update(params[:id], goal_params))
+    render json: Goal.update(params[:id], goal_params)
   end
 
   private
