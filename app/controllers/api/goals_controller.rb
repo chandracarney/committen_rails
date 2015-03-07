@@ -6,4 +6,18 @@ class Api::GoalsController < ApplicationController
   def show
     render json: Goal.find_by(id: params["id"])
   end
+
+  def create
+    render json: Goal.create(goal_params))
+  end
+
+  def update
+    render json: Goal.update(params[:id], goal_params))
+  end
+
+  private
+
+  def goal_params
+    params.require(:goal).permit(:user_id, :title, :description, :start_date, :end_date, :daily_quantity, :completed)
+  end
 end
