@@ -2,6 +2,7 @@ require "codeclimate-test-reporter"
 require "simplecov"
 SimpleCov.start do
   add_filter "/spec/"
+  add_filter "/config/"
 end
 
 require "factory_girl_rails"
