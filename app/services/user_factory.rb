@@ -1,17 +1,17 @@
 class UserFactory
   def initialize(authenticator)
     @authenticator = authenticator
+    @auth = authenticator.auth
   end
 
   def find_or_create_user
-    if User.exists?(uid: authenticator.auth[:id])
-      User.find_by(uid: authenticator.auth[:id])
-    else
-      User.create_with_github_ember(authenticator.auth)
-    end
+    auth_id = authenticator.auth[:id]
+    user = User.find_by(uid: auth_id) || User.create_with_github(auth)
+    Commit.create_with_github(user)
+    user
   end
 
   private
 
-  attr_reader :authenticator
+  attr_reader :authenticator, :auth
 end
