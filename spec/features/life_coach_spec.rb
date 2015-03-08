@@ -13,10 +13,10 @@ RSpec.describe "Life coach alerts", type: :feature do
 
   it "again with a ton of commits" do
     user = create(:user)
+    time_today = Time.zone.now.beginning_of_day
     create(:goal, user_id: user.id)
-    create(:commit, user_id: user.id)
-    create(:commit, user_id: user.id, date: Date.today, sha: "345")
-    create(:commit, user_id: user.id, date: Date.today, sha: "456")
+    create(:commit, user_id: user.id, date: time_today, sha: "345")
+    create(:commit, user_id: user.id, date: Time.zone.now, sha: "456")
     create(:commit, user_id: user.id, date: Date.yesterday, sha: "777")
 
     results = LifeCoach.find_streak_warnings

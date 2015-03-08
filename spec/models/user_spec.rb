@@ -20,12 +20,6 @@ RSpec.describe User, type: :model do
   end
 
   describe "validations" do
-    it "must have a name" do
-      user = build(:user, name: nil)
-
-      expect(user).to_not be_valid
-    end
-
     it "must have a provider" do
       user = build(:user, provider: nil)
 
